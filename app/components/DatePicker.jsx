@@ -44,7 +44,7 @@ const getCalendar = (year, month) => {
     // returns 28-31, depends on the month
     const prevMonthCount = new Date(year, month, 0).getDate();
     const prevMonthStart = prevMonthCount - (!monthIndex ? 6 : monthIndex - 1);
-    const nextMonthEnd = 42 - dayCount - monthIndex;
+    const nextMonthEnd = 41 - dayCount - (prevMonthCount - prevMonthStart);
     /**
      * Most people don't like it when the layout changes adjusting the content
      * so we keep the weeks displayed on the calendar fixed into 6
