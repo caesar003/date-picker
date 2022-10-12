@@ -43,7 +43,7 @@ const getCalendar = (year, month) => {
     const dayCount = new Date(year, month + 1, 0).getDate();
     // returns 28-31, depends on the month
     const prevMonthCount = new Date(year, month, 0).getDate();
-    const prevMonthStart = prevMonthCount - (monthIndex - 1);
+    const prevMonthStart = prevMonthCount - (!monthIndex ? 6 : monthIndex - 1);
     const nextMonthEnd = 42 - dayCount - monthIndex;
     /**
      * Most people don't like it when the layout changes adjusting the content
